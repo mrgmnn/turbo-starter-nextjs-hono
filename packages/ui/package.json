@@ -8,7 +8,7 @@
     "./styles/globals.css": "./src/styles/globals.css"
   },
   "scripts": {
-    "lint": "eslint ."
+    "lint": "biome check ."
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1",
@@ -17,12 +17,10 @@
     "tailwind-merge": "^3"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "^4",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
     "react": "^19",
     "tailwindcss": "^4",
     "typescript": "^5"

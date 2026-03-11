@@ -6,15 +6,13 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "lint": "eslint ."
+    "lint": "biome check ."
   },
   "dependencies": {
     "hono": "^4"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "eslint": "^9",
     "typescript": "^5"
   }
 }

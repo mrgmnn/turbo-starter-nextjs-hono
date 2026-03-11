@@ -6,7 +6,7 @@
     "dev": "PORT=${WEB_PORT:-8000} next dev",
     "build": "next build",
     "start": "PORT=${WEB_PORT:-8000} next start",
-    "lint": "eslint ."
+    "lint": "biome check ."
   },
   "dependencies": {
     "@repo/api-client": "workspace:*",
@@ -16,12 +16,10 @@
     "react-dom": "^19"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "^4",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

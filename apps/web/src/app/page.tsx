@@ -1,7 +1,7 @@
-import { Button } from "@repo/ui/components/button";
-import { createApiClient } from "@repo/api-client";
+import { createApiClient } from '@repo/api-client';
+import { Button } from '@repo/ui/components/button';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 const api = createApiClient(API_URL);
 
 async function getHealth() {
@@ -9,7 +9,7 @@ async function getHealth() {
     const res = await api.health.$get();
     return await res.json();
   } catch {
-    return { status: "unreachable" };
+    return { status: 'unreachable' };
   }
 }
 
@@ -19,9 +19,7 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-8 p-24">
       <h1 className="text-4xl font-bold">Turbo Starter</h1>
-      <p className="text-muted-foreground">
-        Next.js + Hono + shadcn/ui + Drizzle
-      </p>
+      <p className="text-muted-foreground">Next.js + Hono + shadcn/ui + Drizzle</p>
       <div className="flex gap-4">
         <Button>Default Button</Button>
         <Button variant="outline">Outline Button</Button>
