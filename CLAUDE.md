@@ -5,6 +5,7 @@ Turborepo monorepo with Next.js 15 (web), Hono (api), shadcn/ui, Drizzle ORM + P
 ## Commands
 
 ```bash
+docker compose up -d # Start Postgres
 pnpm dev             # Start all apps in dev mode
 pnpm build           # Build all apps and packages
 pnpm lint            # Check linting and formatting (Biome)
