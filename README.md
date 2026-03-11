@@ -6,8 +6,8 @@ A monorepo starter template built with [Turborepo](https://turbo.build/repo), [N
 
 ### Apps
 
-- **`apps/web`** — Next.js 15 App Router frontend (port 3000)
-- **`apps/api`** — Hono API server with Node.js adapter (port 3001)
+- **`apps/web`** — Next.js 15 App Router frontend
+- **`apps/api`** — Hono API server with Node.js adapter
 
 ### Packages
 
@@ -41,7 +41,14 @@ pnpm db:push
 pnpm dev
 ```
 
-The web app runs at [http://localhost:3000](http://localhost:3000) and the API at [http://localhost:3001](http://localhost:3001).
+### Port Convention
+
+| Layer    | Range  | Default | Env Variable |
+| -------- | ------ | ------- | ------------ |
+| Frontend | `8xxx` | `8000`  | `WEB_PORT`   |
+| Backend  | `3xxx` | `3000`  | `API_PORT`   |
+
+By default the web app runs at [http://localhost:8000](http://localhost:8000) and the API at [http://localhost:3000](http://localhost:3000). Override via `.env`.
 
 ## Scripts
 
@@ -70,7 +77,7 @@ The API client provides full end-to-end type safety using Hono RPC:
 ```tsx
 import { createApiClient } from "@repo/api-client";
 
-const api = createApiClient("http://localhost:3001");
+const api = createApiClient(process.env.NEXT_PUBLIC_API_URL!);
 const res = await api.health.$get();
 const data = await res.json(); // fully typed
 ```

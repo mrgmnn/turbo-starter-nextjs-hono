@@ -3,15 +3,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "PORT=${WEB_PORT:-8000} next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "PORT=${WEB_PORT:-8000} next start",
     "lint": "eslint ."
   },
   "dependencies": {
     "@repo/api-client": "workspace:*",
     "@repo/ui": "workspace:*",
-    "next": "^15",
+    "next": "^16",
     "react": "^19",
     "react-dom": "^19"
   },

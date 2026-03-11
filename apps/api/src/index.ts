@@ -5,6 +5,8 @@ import { createApp } from "./app.js";
 const db = createDb(process.env.DATABASE_URL!);
 const app = createApp(db);
 
-serve({ fetch: app.fetch, port: 3001 }, (info) => {
+const PORT = Number(process.env.API_PORT) || 3000;
+
+serve({ fetch: app.fetch, port: PORT }, (info) => {
   console.log(`API server running on http://localhost:${info.port}`);
 });

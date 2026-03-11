@@ -1,7 +1,8 @@
 import { Button } from "@repo/ui/components/button";
 import { createApiClient } from "@repo/api-client";
 
-const api = createApiClient("http://localhost:3001");
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+const api = createApiClient(API_URL);
 
 async function getHealth() {
   try {
